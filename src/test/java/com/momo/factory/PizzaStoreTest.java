@@ -16,7 +16,8 @@ public class PizzaStoreTest {
 		PrintStream printStream = new PrintStream(stream);
 		System.setOut(printStream);
 		
-		PizzaStore pizzaStore = new PizzaStore();
+		SimplePizzaFactory factory = new SimplePizzaFactory();
+		PizzaStore pizzaStore = new PizzaStore(factory);
 		Pizza pizza = pizzaStore.orderPizza(PizzaType.cheese.name());
 		
 		assertTrue(pizza instanceof CheesePizza);
